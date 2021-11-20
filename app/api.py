@@ -1,7 +1,18 @@
+from typing import List
 from fastapi import FastAPI
+
+from model.user import User
+from model.order import Order
+from db_handler import DBHandler
 
 app = FastAPI()
 
-@app.get("/getAllFood/")
-async def get_all_food():
-    return{'food':'all_food_stub'}
+handler = DBHandler() 
+
+@app.get("/getAllOrders/", response_model=List[Order])
+async def get_all_orders():
+    return handler.get_all_orders()
+
+@app.get("/getAllUsers/", response_model=List[User])
+async def get_all_users():
+    return handler.get_all_users()
