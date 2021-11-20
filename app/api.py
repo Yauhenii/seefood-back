@@ -3,7 +3,6 @@ from fastapi import FastAPI
 
 from model.user import User
 from model.order import Order
-from db_handler import DBHandler
 
 app = FastAPI()
 

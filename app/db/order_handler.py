@@ -46,7 +46,7 @@ class OrderHandler(BasicHandler):
 
     INSERT_ORDER_QUERY = """INSERT INTO {} 
         (owner_id, food_name, category_id, price, due_date, comment, is_anonymus, is_completed, is_trashed) 
-        VALUES((SELECT id from {} WHERE 'login'=%s),%s,(SELECT id from {} WHERE 'category_name'=%s),%s,%s,%s,%s,%s,%s);"""
+        VALUES((SELECT id from {} WHERE login_name=%s),%s,(SELECT id from {} WHERE category_name=%s),%s,%s,%s,%s,%s,%s);"""
 
     def insert_order_by_user_name_and_category(self, args):
         self.execute(OrderHandler.INSERT_ORDER_QUERY, args)
