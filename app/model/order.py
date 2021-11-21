@@ -1,11 +1,15 @@
 from pydantic import BaseModel
-from datetime import datetime as dt
+from datetime import date as dt
+
+from model.category import Category
+from model.user import User
 
 
 class Order(BaseModel):
-    owner_name:str
+    id:int
+    owner_id:int
     food_name:str
-    category_name:str
+    category_id:int
     price:float
     due_date:dt
     comment:str
