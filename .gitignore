@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 
 playground.py
+
+calories_service/knn2000.pickle
+
+calories_service/svd2000.pickle
